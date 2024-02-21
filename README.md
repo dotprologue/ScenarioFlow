@@ -4,6 +4,8 @@
 
 ## URLs
 
++ [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
+
 ## Table of Contents
 
 + Introductory Topics
@@ -56,7 +58,7 @@ Let's learn how to use ScenarioFlow. Create a new project in Unity, and set up t
     + Editing support for SFText
 + Instal [Ayu Theme](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)
     + Recommended theme in SFText
-+ Import [ConsoleSFSample](#)
++ Import [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
     + A sample of ScenarioFlow
 
 In this tutorial, we use a sample of a dialogue system that uses the debug console for learning. After the set up, open `ConsoleSFSample/SampleScene`, make sure that the sample scenario `HideAndSeek.sftxt` is bound to the `ScenarioManager` object, and enter the play mode. In this sample, characters' line will be displayed on the console, and you can move on to the next line with the enter key.
@@ -65,19 +67,15 @@ ScenarioManager:
 
 ![](./Images/GettingStarted/Object.png)
 
-Result:
-
-![](./Images/GettingStarted/Result.png)
-
 Make sure that the scenario branches based on your choice.
 
 Choice 1:
 
-![](./Images/GettingStarted/Result_Ans1.png)
+![](./Movies/GettingStarted/ExampleA.gif)
 
 Choice 2:
 
-![](./Images/GettingStarted/Result_Ans2.png)
+![](./Movies/GettingStarted/ExampleB.gif)
 
 ## Hoe to Play Dialogue Scenes
 
