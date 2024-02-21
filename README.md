@@ -1,5 +1,7 @@
 # ScenarioFlow
 
+ScenarioFlow is gettig ready.
+
 [Japanese README](./README_JP.md)
 
 ## Support

@@ -1,5 +1,7 @@
 # ScenarioFlow
 
+ScenarioFlowは現在準備中です。
+
 [English README](./README.md)
 
 ## Support
