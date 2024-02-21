@@ -9,7 +9,9 @@
 ## URLs
 
 + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
+    + デバッグコンソールを使用したサンプルシステム
 + [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
+    + 実用的な機能を備えたサンプルシステム
 
 ## 目次
 

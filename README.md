@@ -10,7 +10,9 @@ Send an email to `support@dotprologue.com`. Either English or Japanse is fine.
 ## URLs
 
 + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
+    + A sample system using the debug console
 + [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
+    + A sample system with practical functions
 
 ## Table of Contents
 
