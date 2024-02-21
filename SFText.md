@@ -1,11 +1,13 @@
 # SFText Script
 
-[English README](./README.md)
-
 ## Table of Contents
 
 + [SFText Script - Grammar](#sftext-script---grammar)
 + [SFText Script - Editing Support](#sftext-script---editing-support)
+
+### Note
+
+Shortcut keys mentioned in the following sections are for Windows. If you are using Mac, see the keybinding in VSCode.
 
 ## SFText Script - Grammar
 
