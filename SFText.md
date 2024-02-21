@@ -282,6 +282,12 @@ In the `HideAndSeek` script, command for scenario branching are used.
 
 ![](./Images/SFTextGrammar/Branch.png)
 
+### Comment
+
+You can write comment texts in comment description parts. Also, you can write comment in other two parts by starting a line with double slash "//".
+
+![](./Images/SFTextGrammar/Comment.png)
+
 ## SFText Script - Editing Support
 
 The VSCode extension for SFText is provided in ScenarioFlow so that you can edit SFText scripts comfortably. We are going to learn how to write SFText scripts effectively with the extension.

@@ -283,6 +283,13 @@ Girl    | I was behind the tree. I win! | Equivalent to the above scope
 
 ![](./Images/SFTextGrammar/Branch.png)
 
+### コメント
+
+コメント文をコメント記述部に書くことができますが、加えて、行をダブルスラッシュ「//」で始めることで、他の二つの領域にコメント文を書くこともできます。
+
+![](./Images/SFTextGrammar/Comment.png)
+
+
 ## SFTextスクリプト - 入力支援
 
 ScenarioFlowでは、SFTextの編集を快適に行うための、VSCode拡張機能が提供されています。このセクションでは、拡張機能を使用して、SFTextスクリプトを効率的に記述する方法について学習します。
