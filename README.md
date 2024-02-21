@@ -2,9 +2,15 @@
 
 [Japanese README](./README_JP.md)
 
+## Support
+
+Send an email to `support@dotprologue.com`. Either English or Japanse is fine.
+
+
 ## URLs
 
 + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
++ [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
 
 ## Table of Contents
 

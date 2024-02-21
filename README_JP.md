@@ -2,9 +2,14 @@
 
 [English README](./README.md)
 
+## Support
+
+`support@dotprologue.com`にメールを送ってください。
+
 ## URLs
 
 + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
++ [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
 
 ## 目次
 
