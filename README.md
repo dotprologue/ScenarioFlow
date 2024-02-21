@@ -1,6 +1,6 @@
 # ScenarioFlow
 
-ScenarioFlow is gettig ready.
+ScenarioFlow is getting ready.
 
 [Japanese README](./README_JP.md)
 
