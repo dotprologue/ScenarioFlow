@@ -10,6 +10,8 @@ ScenarioFlowは現在準備中です。
 
 ## URLs
 
++ [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
+    + SFText用のVSCode拡張機能
 + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
     + デバッグコンソールを使用したサンプルシステム
 + [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
@@ -65,7 +67,7 @@ Unityで新たなプロジェクトを作成し、以下の手順に従ってセ
 + [ScenarioFlow](#)のインポート
 + [Visual Studio Code](https://code.visualstudio.com/)のインストール
     + 推奨テキストエディター
-+ [SFText Extension Pack](#)のインストール
++ [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)のインストール
     + SFText入力支援
 + [Ayu Theme](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)のインストール
     + SFText推奨テーマ

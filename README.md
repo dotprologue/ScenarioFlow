@@ -11,6 +11,8 @@ Send an email to `support@dotprologue.com`. Either English or Japanse is fine.
 
 ## URLs
 
++ [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
+    + VSCode extensions for SFText 
 + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
     + A sample system using the debug console
 + [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
@@ -64,7 +66,7 @@ Let's learn how to use ScenarioFlow. Create a new project in Unity, and set up t
 + Import [ScenarioFlow](#)
 + Install [Visual Studio Code](https://code.visualstudio.com/)
     + Recommended text editor
-+ Install [SFText Extension Pack](#)
++ Install [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
     + Editing support for SFText
 + Instal [Ayu Theme](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)
     + Recommended theme in SFText
