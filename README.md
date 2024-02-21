@@ -1,5 +1,7 @@
 # ScenarioFlow
 
+[Japanese README](./README_JP.md)
+
 ## URLs
 
 ## Table of Contents
@@ -50,7 +52,7 @@ Let's learn how to use ScenarioFlow. Create a new project in Unity, and set up t
 + Import [ScenarioFlow](#)
 + Install [Visual Studio Code](https://code.visualstudio.com/)
     + Recommended text editor
-+ Install [VSCode extensions](#)
++ Install [SFText Extension Pack](#)
     + Editing support for SFText
 + Instal [Ayu Theme](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)
     + Recommended theme in SFText

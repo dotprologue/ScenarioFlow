@@ -1,5 +1,7 @@
 # ScenarioFlow
 
+[English README](./README.md)
+
 ## URLs
 
 ## 目次
@@ -52,7 +54,7 @@ Unityで新たなプロジェクトを作成し、以下の手順に従ってセ
 + [ScenarioFlow](#)のインポート
 + [Visual Studio Code](https://code.visualstudio.com/)のインストール
     + 推奨テキストエディター
-+ [VSCode拡張機能](#)のインストール
++ [SFText Extension Pack](#)のインストール
     + SFText入力支援
 + [Ayu Theme](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)のインストール
     + SFText推奨テーマ
@@ -73,11 +75,11 @@ ScenarioManager:
 
 回答1：
 
-![](./Images/GettingStarted/Result_Ans1.png)
+![](./Movies/GettingStarted/ExampleA.gif)
 
 回答2：
 
-![](./Images/GettingStarted/Result_Ans2.png)
+![](./Movies/GettingStarted/ExampleB.gif)
 
 ## 会話シーンの再生方法
 

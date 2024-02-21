@@ -1,5 +1,7 @@
 # SFText Script
 
+[English README](./README.md)
+
 ## Table of Contents
 
 + [SFText Script - Grammar](#sftext-script---grammar)
