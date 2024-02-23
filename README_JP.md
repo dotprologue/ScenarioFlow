@@ -198,6 +198,13 @@ ScenarioBookReader scenarioBookReader = new ScenarioBookReader(scenarioTaskExecu
 
 `ScenarioBookReader`クラスと`ScenarioTaskExecutor`クラスは、シナリオ分岐のための機能やスキップモード実装のための機能など、会話シーンの作成に便利な機能を提供するためのインターフェースをいくつか実装しています。これについては、後のセクションで学習します。
 
+なお、`ScenarioTaskExecutor`クラスは`IDisposable`インターフェースを実装します。そのため、シーンの終了とともにそのクラスのインスタンスを破棄するようにします。
+
+```cs
+IDisposable disposable = scenarioTaskExecutor;
+disposable.AddTo(this.GetCancellationTokenOnDestroy());
+```
+
 ## コマンドの追加と実行
 
 ScenarioFlowで会話シーンを実行する際の大まかな流れは、以下の通りです。

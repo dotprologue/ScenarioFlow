@@ -193,6 +193,13 @@ ScenarioBookReader scenarioBookReader = new ScenarioBookReader(scenarioTaskExecu
 
 The `ScenarioBookReader` class and the `ScenarioTaskExecutor` class implemets several interfaces to provide useful functions for creating dialogue scenes, for example, functions for scenario branching and functions to implement the skip mode. We are going to learn about these functions in the sections later.
 
+As a side note, the `ScenarioTaskExecutor` class implements the `IDisposable` interface, so you have to dispose of an instance of that class when you finish a scene.
+
+```cs
+IDisposable disposable = scenarioTaskExecutor;
+disposable.AddTo(this.GetCancellationTokenOnDestroy());
+```
+
 ## New Commands and Execution
 
 The overview of steps for executing a dialogue scene is below:
