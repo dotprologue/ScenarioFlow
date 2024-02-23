@@ -10,14 +10,20 @@ ScenarioFlowは現在準備中です。
 
 ## URLs
 
-+ [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
-    + SFText用のVSCode拡張機能
-+ [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
-    + デバッグコンソールを使用したサンプルシステム
-+ [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
-    + 実用的な機能を備えたサンプルシステム
-+ [SavableSFSample](https://github.com/dotprologue/SavableSFSample.git)
-    + シナリオセーブ機能を備えたサンプルシステム
++ ScenarioFlow
+    + [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
+        + SFText用のVSCode拡張機能
+    + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
+        + デバッグコンソールを使用したサンプルシステム
+    + [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
+        + 実用的な機能を備えたサンプルシステム
+    + [SavableSFSample](https://github.com/dotprologue/SavableSFSample.git)
+        + シナリオセーブ機能を備えたサンプルシステム
++ External
+    + [UniTask](https://github.com/Cysharp/UniTask.git)
+        + ScenarioFlowは非同期処理を扱うためにUniTaskを使用します
+    + [Ayu Theme](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)
+        + SFText用、VSCode推奨テーマ
 
 ## 目次
 
