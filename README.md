@@ -47,7 +47,9 @@ Send an email to `support@dotprologue.com`. Either English or Japanse is fine.
 
 ScenarioFlow is a library for Unity to implement scenes of characters conversing with each other effectively. This library provides the programmer-friendly and writer-friendly system by adopting novel architecture with the catchphrase "Suits for all projects."
 
-![](./Movies/Introduction/Scene.gif)
+![](./Movies/Introduction/SimpleScene.gif)
+
+![](./Movies/Introduction/SavableScene.gif)
 
 ### Why ScenarioFlow?
 

@@ -47,7 +47,10 @@ ScenarioFlowは現在準備中です。
 
 ScenarioFlowは、Unityでのゲーム開発において、キャラクター同士の会話シーンを効率的に実装するためのライブラリです。「どのようなプロジェクトにも対応する」をキャッチフレーズに、全く新しいアーキテクチャを採用することにより、プログラマーフレンドリーかつ、ライターフレンドリーなシステムを提供します。
 
-![](./Movies/Introduction/Scene.gif)
+![](./Movies/Introduction/SimpleScene.gif)
+
+![](./Movies/Introduction/SavableScene.gif)
+
 
 ### なぜScenarioFlowを使うのか
 
