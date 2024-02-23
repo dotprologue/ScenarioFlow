@@ -16,6 +16,8 @@ ScenarioFlowは現在準備中です。
     + デバッグコンソールを使用したサンプルシステム
 + [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
     + 実用的な機能を備えたサンプルシステム
++ [SavableSFSample](https://github.com/dotprologue/SavableSFSample.git)
+    + シナリオセーブ機能を備えたサンプルシステム
 
 ## 目次
 

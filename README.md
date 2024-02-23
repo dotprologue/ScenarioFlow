@@ -17,6 +17,8 @@ Send an email to `support@dotprologue.com`. Either English or Japanse is fine.
     + A sample system using the debug console
 + [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
     + A sample system with practical functions
++ [SavableSFSample](https://github.com/dotprologue/SavableSFSample.git)
+    + A sample system with functions for saving scenario data
 
 ## Table of Contents
 
