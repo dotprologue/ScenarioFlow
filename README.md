@@ -82,7 +82,7 @@ Let's learn how to use ScenarioFlow. Create a new project in Unity, and set up t
 + Import [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
     + A sample of ScenarioFlow
 
-In this tutorial, we use a sample of a dialogue system that uses the debug console for learning. After the set up, open `ConsoleSFSample/SampleScene`, make sure that the sample scenario `HideAndSeek.sftxt` is bound to the `ScenarioManager` object, and enter the play mode. In this sample, characters' line will be displayed on the console, and you can move on to the next line with the enter key.
+In this tutorial, we use a sample of a dialogue system that uses the debug console for learning. After the set up, open `ConsoleSFSample/ConsoleSFSampleScene`, make sure that the sample scenario `HideAndSeek.sftxt` is bound to the `ScenarioManager` object, and enter the play mode. In this sample, characters' line will be displayed on the console, and you can move on to the next line with the enter key.
 
 ScenarioManager:
 

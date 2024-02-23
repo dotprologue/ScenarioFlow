@@ -85,7 +85,7 @@ Unityで新たなプロジェクトを作成し、以下の手順に従ってセ
 + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)のインポート
     + ScenarioFlowのサンプル
 
-このチュートリアルでは、デバッグコンソールを利用した会話システムのサンプルであるConsoleSFSampleとともに学習を進めていきます。セットアップが済んだら、`ConsoleSFSample/SampleScene`を開いて、`ScenarioManager`オブジェクトにサンプルシナリオ`HideAndSeek.sftxt`が設定されていることを確認してプレイモードを開始します。このサンプルではキャラクターのセリフがコンソールに表示され、エンターキーを押すことによって次のセリフに進めることができます。
+このチュートリアルでは、デバッグコンソールを利用した会話システムのサンプルであるConsoleSFSampleとともに学習を進めていきます。セットアップが済んだら、`ConsoleSFSample/ConsoleSFSampleScene`を開いて、`ScenarioManager`オブジェクトにサンプルシナリオ`HideAndSeek.sftxt`が設定されていることを確認してプレイモードを開始します。このサンプルではキャラクターのセリフがコンソールに表示され、エンターキーを押すことによって次のセリフに進めることができます。
 
 ScenarioManager:
 
