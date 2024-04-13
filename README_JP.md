@@ -1,16 +1,39 @@
 # ScenarioFlow
 
-ScenarioFlowは現在準備中です。
-
 [English README](./README.md)
 
-## Support
+## お知らせ
 
-`support@dotprologue.com`にメールを送ってください。
+ScenarioFlowがUnityアセットストアにてリリースされました！ここを[クリック](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)して、無料でダウンロードすることができます。
+
+こんにちは！私たちは、ゲーム開発者のサポートをするためのソフトウェアを開発している、.PROLOGUE (Dotprologue)です。この度、とうとう我々の最初のプロダクトであるScenarioFlowをリリースでき、とてもうれしく思います。ScenarioFlowはUnityで使用できるライブラリであり、このライブラリを使用すると、あなた専用の「会話システム」を効率的に実装することができます。会話システムは、このセクションの最後にある動画にあるように、ゲーム中のキャラクターが会話をする会話シーンを効率的に作成するために使用されるシステムのことです。
+
+ScnearioFlowは、このライブラリと同様の目的を持つ既存のライブラリと比較して、まったく新しい思想とアーキテクチャに基づいて設計されています。私たちはこのライブラリがプロジェクトの中で会話シーンを作成するすべてゲーム開発者にとって大きな助けになることを願っており、また、多くの人がこのプロダクトを便利に使ってくれると嬉しく思います。
+
+現在、私たちはユーザー体験を向上させるためのさらなるアップデートを予定しており、さらに、学習用のさらなるドキュメントの準備も予定しています。楽しみにしていてください！
+
+今後もよろしくお願いします。
+
+### 謝辞
+
+とても魅力的な2人のキャラクター、シーナとリオのデザインおよび作画をしてくださった、卯月アキさんに感謝します。彼女らはScenarioFlowのマスコットキャラクターであり、多くのサンプルに登場します（下の動画にも）。卯月さんの他の作品を見たい場合は、[卯月アキさんのX (Twitter)](https://twitter.com/aki_uzuki3)を見に行ってください！
+
+![](./Movies/Introduction/SimpleScene.gif)
+
+## コンタクト
+
++ `support@dotprologue.com`
+    + 質問、トラブル、要望、フィードバック
++ `contact@dotprologue.com`
+    + その他の要件
+
+どのようなフィードバックでも歓迎します。気軽にご連絡ください！（英語または日本語に対応可能です）
 
 ## URLs
 
 + ScenarioFlow
+    + [ScenarioFlow](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)
+        + Unityアセットストアへのリンク
     + [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
         + SFText用のVSCode拡張機能
     + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
@@ -75,7 +98,8 @@ Unityで新たなプロジェクトを作成し、以下の手順に従ってセ
 
 + [UniTask](https://github.com/Cysharp/UniTask)のインポート
     + ScenarioFlowは非同期処理を扱うためにUniTaskを使用します
-+ [ScenarioFlow](#)のインポート
++ [ScenarioFlow](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)のインポート
+    + Unityアセットストアでダウンロードします
 + [Visual Studio Code](https://code.visualstudio.com/)のインストール
     + 推奨テキストエディター
 + [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)のインストール

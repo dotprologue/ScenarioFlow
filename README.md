@@ -1,17 +1,39 @@
 # ScenarioFlow
 
-ScenarioFlow is getting ready.
-
 [Japanese README](./README_JP.md)
 
-## Support
+## Notification
 
-Send an email to `support@dotprologue.com`. Either English or Japanse is fine.
+ScenarioFlow is now available on the Unity Asset Store! Click [here](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843) to download for free.
 
+Hi there! We are .PROLOGUE (Dotprologue), developing software for supporting game developers. We are very glad that our first product, ScenarioFlow, has been launched eventually. ScenarioFlow is a library for Unity that enables you to implement your own "dialogue system" effectively. Dialogue system is a system used for creating dialogue scenes effectively in which characters on a game make conversation like the movie at the bottom of this section.
+
+ScenarioFlow was designed based on completely new philosophy and archtecture compared with already existing libraries that have the similar purpose to this library. We believe it would be of great help for all developers creating dialogue scenes on their projects, and would be happy if many of you could use this product usefully. 
+
+Now, we are planning further updates of this product to improve your experience, and also planning to prepare additional documents for learning. Look forward to it!
+
+Thank you very much.
+
+### Acknowledgement
+
+We would like to thank Aki Uzuki (@aki_uzuki3 on X, Twitter), who designed and illustrated very attractive two characters, Sheena and Rio. They are the mascots of ScenarioFlow and appear on many samples (even in the movie below). Why don't you visit [Aki Uzuki's X (Twitter)](https://twitter.com/aki_uzuki3) to see Uzuki's other works? 
+
+![](./Movies/Introduction/SimpleScene.gif)
+
+## Contacts
+
++ `support@dotprologue.com`
+    + Questions, troubles, requests, or feedbacks
++ `contact@dotprologue.com`
+    + For other business
+
+Any feedback is welcome. Feel free to contact us! (English or Japanese is fine)
 
 ## URLs
 
 + ScenarioFlow
+    + [ScenarioFlow](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)
+        + Link to the Unity Asset Store
     + [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
         + VSCode extensions for SFText 
     + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
@@ -72,7 +94,8 @@ Let's learn how to use ScenarioFlow. Create a new project in Unity, and set up t
 
 + Import [UniTask](https://github.com/Cysharp/UniTask)
     + ScenarioFlow uses UniTask to handle async operations
-+ Import [ScenarioFlow](#)
++ Import [ScenarioFlow](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)
+    + Download the asset on the Unity Asset Store
 + Install [Visual Studio Code](https://code.visualstudio.com/)
     + Recommended text editor
 + Install [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
