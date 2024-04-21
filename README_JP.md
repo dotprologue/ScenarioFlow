@@ -2,6 +2,10 @@
 
 [English README](./README.md)
 
+## 存在しているバグ
+
+詳しくは、[ここ](./Bugs_JP.md)を参照してください。
+
 ## お知らせ
 
 ScenarioFlowがUnityアセットストアにてリリースされました！ここを[クリック](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)して、無料でダウンロードすることができます。

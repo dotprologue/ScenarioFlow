@@ -2,6 +2,10 @@
 
 [Japanese README](./README_JP.md)
 
+## Existing Bugs
+
+See [here](./Bugs.md) for details.
+
 ## Notification
 
 ScenarioFlow is now available on the Unity Asset Store! Click [here](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843) to download for free.
