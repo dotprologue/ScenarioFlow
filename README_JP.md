@@ -8,15 +8,23 @@
 
 ## お知らせ
 
-ScenarioFlowがUnityアセットストアにてリリースされました！ここを[クリック](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)して、無料でダウンロードすることができます。
+ScenarioFlowバージョン1.1.0が、間もなくリリースされます！
 
-こんにちは！私たちは、ゲーム開発者のサポートをするためのソフトウェアを開発している、.PROLOGUE (Dotprologue)です。この度、とうとう我々の最初のプロダクトであるScenarioFlowをリリースでき、とてもうれしく思います。ScenarioFlowはUnityで使用できるライブラリであり、このライブラリを使用すると、あなた専用の「会話システム」を効率的に実装することができます。会話システムは、このセクションの最後にある動画にあるように、ゲーム中のキャラクターが会話をする会話シーンを効率的に作成するために使用されるシステムのことです。
+このバージョンアップのポイントは以下の通りです。
 
-ScnearioFlowは、このライブラリと同様の目的を持つ既存のライブラリと比較して、まったく新しい思想とアーキテクチャに基づいて設計されています。私たちはこのライブラリがプロジェクトの中で会話シーンを作成するすべてゲーム開発者にとって大きな助けになることを願っており、また、多くの人がこのプロダクトを便利に使ってくれると嬉しく思います。
++ SFTextの文法に関する変更
+    + 会話スコープのための新しいシンボル"line break symbol"
+    + 新たなスコープ「コメントスコープ」
+    + スコープを終了するための空行
++ バグ修正
 
-現在、私たちはユーザー体験を向上させるためのさらなるアップデートを予定しており、さらに、学習用のさらなるドキュメントの準備も予定しています。楽しみにしていてください！
+さらなる詳細は、[VersionHistory_JP](./VersionHistory_JP.md)を参照してください。
 
-今後もよろしくお願いします。
+また、[サンプル](#サンプル)もアップデートされる予定です。
+
+> [!CAUTION]
+> 新しいバージョンの、VSCode向けのSFText Extension Pack（バージョン1.1.0）が、ScenarioFlowバージョン1.1.0に先立って公開されます。
+> ただし、ScenarioFlowのバージョン1.1.0が公開されるまで、Extension Packのバージョン1.0.0の使用を続けてください。新しいExtension Packに含まれる新しいSFText Syntaxが、ScenarioFlowバージョン1.0.0ではいくつかのケースで正常に動作しない場合があります。
 
 ### 謝辞
 
@@ -35,22 +43,23 @@ ScnearioFlowは、このライブラリと同様の目的を持つ既存のラ�
 
 ## URLs
 
-+ ScenarioFlow
-    + [ScenarioFlow](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)
-        + Unityアセットストアへのリンク
-    + [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
-        + SFText用のVSCode拡張機能
-    + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
-        + デバッグコンソールを使用したサンプルシステム
-    + [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
-        + 実用的な機能を備えたサンプルシステム
-    + [SavableSFSample](https://github.com/dotprologue/SavableSFSample.git)
-        + シナリオセーブ機能を備えたサンプルシステム
-+ External
-    + [UniTask](https://github.com/Cysharp/UniTask.git)
-        + ScenarioFlowは非同期処理を扱うためにUniTaskを使用します
-    + [Ayu Theme](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)
-        + SFText用、VSCode推奨テーマ
+### ScenarioFlow
++ [ScenarioFlow](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)
+    + Unityアセットストアへのリンク
++ [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
+    + SFText用のVSCode拡張機能
+### 外部ツール
++ [UniTask](https://github.com/Cysharp/UniTask.git)
+    + ScenarioFlowは非同期処理を扱うためにUniTaskを使用します
++ [Ayu Theme](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)
+    + SFText用、VSCode推奨テーマ
+### サンプル
++ [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
+    + デバッグコンソールを使用したサンプルシステム
++ [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
+    + 実用的な機能を備えたサンプルシステム
++ [SavableSFSample](https://github.com/dotprologue/SavableSFSample.git)
+    + シナリオセーブ機能を備えたサンプルシステム
 
 ## 目次
 

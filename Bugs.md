@@ -61,4 +61,4 @@ Build will succeed.
 ![](./Images/Bugs/BuildSucceeded.png)
 
 > [!NOTE]
-> This bug will have been fixed in the next version of ScenarioFlow. 
+> This bug will have been fixed in ScenarioFlow version 1.1.0.

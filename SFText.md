@@ -148,7 +148,7 @@ public string ConvertToString(string input)
 >
 > Therefore, the next version of SFText is going to be published in order to solve this problem. In the next version, multiple texts in a dialogue scope will be automatically combined with a pre-defined symbol (probably \<bk> that means 'line break') when the script is imported to Unity. Programmers will have to replace the symbols with any characters as they like in a `string` decoder, a method for displaying dialogue lines, or other place, but writers will be freed from the troublesome problem mentioned above.
 >
-> Keep in mind that this modification will come in the near future.
+> Keep in mind that this modification will come in ScenarioFlow veresion 1.1.0.
 
 You have to specify an async command and a token code used in dialogue scopes before using dialouge scopes. That's because a dialogue scope is replaced by an equivalent command scope when a SFText script is imported.
 

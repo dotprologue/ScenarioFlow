@@ -8,15 +8,23 @@ See [here](./Bugs.md) for details.
 
 ## Notification
 
-ScenarioFlow is now available on the Unity Asset Store! Click [here](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843) to download for free.
+ScenarioFlow version 1.1.0 is comming soon!
 
-Hi there! We are .PROLOGUE (Dotprologue), developing software for supporting game developers. We are very glad that our first product, ScenarioFlow, has been launched eventually. ScenarioFlow is a library for Unity that enables you to implement your own "dialogue system" effectively. Dialogue system is a system used for creating dialogue scenes effectively in which characters on a game make conversation like the movie at the bottom of this section.
+It includes the following features:
 
-ScenarioFlow was designed based on completely new philosophy and archtecture compared with already existing libraries that have the similar purpose to this library. We believe it would be of great help for all developers creating dialogue scenes on their projects, and would be happy if many of you could use this product usefully. 
++ Changes in SFText grammar
+    + a new symbol for dialogue scopes, "line break symbol"
+    + a new scope, "comment scope"
+    + a empty line to end a scope
++ Bug fixed
 
-Now, we are planning further updates of this product to improve your experience, and also planning to prepare additional documents for learning. Look forward to it!
+For more details, see [VersionHistory](./VersionHistory.md).
 
-Thank you very much.
+Also, [samples](#sample) will be updated, too.
+
+> [!CAUTION]
+> New version of SFText Extension Pack (v1.1.0) for VSCode will be published in advance of ScenarioFlow version 1.1.0.
+> However, continue to use the extension pack v1.0.0 until ScenarioFlow v1.1.0 is available because new SFText Syntax, which the new extension pack includes, may not work well with ScenarioFlow v1.0.0 in some cases.
 
 ### Acknowledgement
 
@@ -35,22 +43,23 @@ Any feedback is welcome. Feel free to contact us! (English or Japanese is fine)
 
 ## URLs
 
-+ ScenarioFlow
-    + [ScenarioFlow](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)
-        + Link to the Unity Asset Store
-    + [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
-        + VSCode extensions for SFText 
-    + [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
-        + A sample system using the debug console
-    + [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
-        + A sample system with practical functions
-    + [SavableSFSample](https://github.com/dotprologue/SavableSFSample.git)
-        + A sample system with functions for saving scenario data
-+ External
-    + [UniTask](https://github.com/Cysharp/UniTask.git)
-        + ScenarioFlow uses UniTask to handle async operations
-    + [Ayu Theme](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)
-        + Recommended VSCode theme for SFText
+### ScenarioFlow
++ [ScenarioFlow](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)
+    + Link to the Unity Asset Store
++ [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
+    + VSCode extensions for SFText 
+### External
++ [UniTask](https://github.com/Cysharp/UniTask.git)
+    + ScenarioFlow uses UniTask to handle async operations
++ [Ayu Theme](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)
+    + Recommended VSCode theme for SFText
+### Sample
++ [ConsoleSFSample](https://github.com/dotprologue/ConsoleSFSample.git)
+    + A sample system using the debug console
++ [SimpleSFSample](https://github.com/dotprologue/SimpleSFSample.git)
+    + A sample system with practical functions
++ [SavableSFSample](https://github.com/dotprologue/SavableSFSample.git)
+    + A sample system with functions for saving scenario data
 ## Table of Contents
 
 + Introductory Topics

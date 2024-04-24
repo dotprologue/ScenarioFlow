@@ -61,4 +61,4 @@ namespace ScenarioFlow.Scripts.Composite.Editor
 ![](./Images/Bugs/BuildSucceeded.png)
 
 > [!NOTE]
-> このバグは、ScenarioFlowの次のバージョンで修正される予定です。
+> このバグは、ScenarioFlowバージョン1.1.0で修正される予定です。
