@@ -8,7 +8,7 @@
 
 ## お知らせ
 
-ScenarioFlowバージョン1.1.0が、間もなくリリースされます！
+[ScenarioFlowバージョン1.1.0](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)がリリースされました！
 
 このバージョンアップのポイントは以下の通りです。
 
@@ -20,11 +20,9 @@ ScenarioFlowバージョン1.1.0が、間もなくリリースされます！
 
 さらなる詳細は、[VersionHistory_JP](./VersionHistory_JP.md)を参照してください。
 
-また、[サンプル](#サンプル)もアップデートされる予定です。
+ScenarioFlowをアップデートの際は、[SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)の、バージョン1.1.0へのアップデートも必要になります。加えて、[サンプル](#サンプル)もアップデートされたので、ScenarioFlowをアップデートした後は、そちらもご確認ください。
 
-> [!CAUTION]
-> 新しいバージョンの、VSCode向けのSFText Extension Pack（バージョン1.1.0）が、ScenarioFlowバージョン1.1.0に先立って公開されます。
-> ただし、ScenarioFlowのバージョン1.1.0が公開されるまで、Extension Packのバージョン1.0.0の使用を続けてください。新しいExtension Packに含まれる新しいSFText Syntaxが、ScenarioFlowバージョン1.0.0ではいくつかのケースで正常に動作しない場合があります。
+まだScenarioFlowをインストールしていなければ、今すぐ無料で、Unityアセットストアから入手しましょう！
 
 ### 謝辞
 

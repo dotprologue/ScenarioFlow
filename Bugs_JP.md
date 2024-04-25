@@ -2,6 +2,9 @@
 
 ## アプリケーションビルド時のエラー
 
+> [!NOTE]
+> このバグは、ScenarioFlowバージョン1.1.0で修正されました。
+
 ### 問題
 
 アプリケーションのビルドが失敗します。
@@ -59,6 +62,3 @@ namespace ScenarioFlow.Scripts.Composite.Editor
 ビルドは成功します。
 
 ![](./Images/Bugs/BuildSucceeded.png)
-
-> [!NOTE]
-> このバグは、ScenarioFlowバージョン1.1.0で修正される予定です。

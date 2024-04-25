@@ -38,43 +38,32 @@ What is described in scope parts and content parts depends on type of scope. You
 
 ### Scope
 
-Scope is the building block of SFText. A scope is composed of multiple lines, and SFText is composed of multiple scopes. There are the three types of scope as follows.
+Scope is the building block of SFText. A scope is composed of multiple lines, and SFText is composed of multiple scopes. There are the four types of scope as follows.
 
 | Scope | Role |
 | ---- | ---- |
+| Comment Scope | Write comments |
 | Command Scope | Invoke any command |
 | Dialogue Scope | Invoke command related to dialogue lines |
 | Macro Scope | Preprocess texts, or attach label |
 
-The scope classification example of the `HideAndSeek` script is shown below. A scope continues in multiple lines until the next scope starts. We describe the unique symbols on the scope part depending on the type of a new scope to start it.
+
+The scope classification example of the `HideAndSeek` script is shown below. A scope continues in multiple lines until the next scope starts. How each scope is started depends on type of a scope.
 
 
-```
-#token      | Dialogue token code: {$standard}            | Macro Scope
-Girl        | Oh! Many pegions here!                      | Dialogue Scope
-            | --> Text color: {#EE7800}                   | 
-            |                                             | 
-Girl        | Should I look for another place to hide...? | Dialogue Scope
-            |                                             | 
-Narr        | After 1 minutes, you started to seek.       | Dialogue Scope
-            |                                             | 
-Narr        | Where do you search?                        | Dialogue Scope
-            | --> Text color: {#00FFFF}                   | 
-            |                                             | 
-$f-promised | branch on 2 selections async                | Command Scope
-            | Selection 1: {Behind the tree}              | 
-            | - Jump to {Ans1}                            | 
-            | Selection 2: {Under the slide}              | 
-            | - Jump to {Ans2}                            | 
-            |                                             | 
-#label      | //============ {Ans1} ============//        | Macro Scope
-            |                                             | 
-Girl        | Oh, you got me!                             | Dialogue Scope
-            |                                             | 
-$sync       | jump to label                               | Command Scope
-            | Jump to {Exit}.                             | 
-            |                                             | 
-```
+![](./Images/SFTextGrammar/ScopeClassification.png)
+
+### Comment Scope
+
+In a comment scope, you can write comments in content description parts. There are two ways to start this scope.
+
+The first way is to place double slash "//" at the beginning of a line. Then a comment scope starts regardless of the following text at the line. So you can easily comment out or uncomment any lines with `Ctrl+/` in VSCode.
+
+![](./Images/SFTextGrammar/CommentOut.png)
+
+The second way is to end a scope with an empty line. In SFText, empty line means a line both of whose scope declaration part and content description part are empty. If you place an empty line under a scope, a comment scope will start from the next line.
+
+![](./Images/SFTextGrammar/EmptyLineComment.png)
 
 ### Command Scope
 
@@ -109,63 +98,52 @@ $TokenCode | Command Name                                 |
 
 Dialogue scope is used for describing dialogue lines.
 
-Describe a character name on a scope part to start this scope. Then write dialogue lines on the content parts from the start line.
+You can start a dialogue scope by placing a character name at the scope declaration part of a line. And you can write dialogue lines at the content description parts in the dialogue scope.
 
 ```
-Character Name | Dialogue Line |
+Name    | Line1                     |
+        | Line2                     |
+        | ...                       |
 ```
 
-Dialogue lines can be described in mutiple lines. Texts written in multiple lines are combined to single text.
+Note that all white spaces at the beginning of and the end of dialogue lines are trimmed.
 
-```
-Character Name | Dialogue Line 1                |
-               | Dialogue Line 2                |
-               |                                |
-Character Name | Dialgoue Line 1Dialogue Line 2 | Equivalent to the above text
-```
+Also, multiple texts in a dialogue scope are combined with "\<bk>", which means "line break". The dialogue lines in the following dialogue scope will be imported as a single text, "Hello!\<bk>I'm Alice.\<bk>Nice to meet you!".
 
-Note that all leading and trailing whitespaces are removed from texts in SFText. If you want to insert a new line or a whitespace to texts, use rich text or define a symbol to replace it with a whitespace by a decoder for the `string` type.
+![](./Images/SFTextGrammar/LineBreak.png)
 
-```
-Character Name | Dialogue Line 1                |
-               | <sp>Dialogue Line 2            | <sp> is a symbol replaced by a white space
-               | <br>Dialogue Line 3            | <br> means a new line
-```
+You can combine multiple lines in a dialogue scope with any words you like by replacing this symbol in a `string` decoder or a command that displays dialogue lines. For example, dialogue lines in a dialogue scope are combined with a white space with the following decoder or command. The texts in the above dialogue scope are displayed as "Hello! I'm Alice. Nice to meet you!".
+
+`SFText.LineBreakSymbol`, which returns "\<bk>", is available when replacing line break symbols.
 
 ```cs
+// String decoder
 [DecoderMethod]
 public string ConvertToString(string input)
 {
-    input = input.Replace("<sp>", " ");
-    return input;
+    return input.Replace(SFText.LineBreakSymbol, " ");
+}
+
+// Command that displays a dialogue line
+[CommandMethod("display dialogue")]
+public UniTask DisplayDialogueAsync(string name, string line, CancellationToken cancellationToken)
+{
+    line = line.Replace(SFText.LineBreakSymbol, " ");
+
+    // Display a dialogue line
+    // ...
 }
 ```
 
-> [!WARNING]
-> This specification will change.
->
-> In the example above, we defined the symbol \<sp> that will be replaced with a white space so that we can combine two texts in a dialogue scope with a white space. However, it is annoying and meaningless for writers to put such symbols everytime they write multiple texts in a dialogue scope because it is expected that the same symbols are always put between texts repetitively.
->
-> Therefore, the next version of SFText is going to be published in order to solve this problem. In the next version, multiple texts in a dialogue scope will be automatically combined with a pre-defined symbol (probably \<bk> that means 'line break') when the script is imported to Unity. Programmers will have to replace the symbols with any characters as they like in a `string` decoder, a method for displaying dialogue lines, or other place, but writers will be freed from the troublesome problem mentioned above.
->
-> Keep in mind that this modification will come in ScenarioFlow veresion 1.1.0.
+### Macro Scope for Dialogue Scope
 
-You have to specify an async command and a token code used in dialogue scopes before using dialouge scopes. That's because a dialogue scope is replaced by an equivalent command scope when a SFText script is imported.
+You have to specify an async command and a token code used in dialogue scopes before describing them. That's because a dialogue scope is replaced by an equivalent command scope when a SFText script is imported.
 
-```
-#command  | Dialogue command: {log dialogue async} | 
-#token    | Dialogue token code: {$standard}       | 
-          |                                        | 
-Alice     | Hello, I'm Alice.                      | 
-          |                                        | 
-$standard | log dialogue async                     | Equivalent to the above scope
-          | {Alice}                                | 
-          | {Hello, I'm Alice.}                    | 
-```
+![](./Images/SFTextGrammar/DialogueReplacement.png)
 
-We are going to learn details about macro scope, but at this point, note that a macro type is described on a scope part, and arguments enclosed by curly brackets are described on content parts in a macro scope.
+We are going to learn details about macro scope later, but at this point, note that a macro type is described at a scope part, and arguments enclosed by curly brackets are described at content parts in a macro scope.
 
-The thing is that dialogue scope is the abbreviation format for command scope. Dialogue scope can handle any command if the command has the proper number of parameters, although dialogue scope is designed for commands that display dialogue line. On the contrary, even a command registered to dialogeu scope can be invoked by command scopes. The example in `HideAndSeek` is shown below.
+The thing is that dialogue scope is the abbreviation format for command scope. Dialogue scope can handle any command if it has the proper number of parameters, although dialogue scope is designed for commands that display dialogue lines. On the contrary, even a command used in dialogue scopes can be invoked by command scopes. The example in `HideAndSeek` is shown below.
 
 ```
 $parallel   | log dialogue async         | 
@@ -187,18 +165,7 @@ Dialogue scope with extra arguments is a kind of dialogue scope. A command and a
 
 A diualogue scope with extra arguments is also replaced by an equivalent command scope, which is the same as normal dialogue scope.
 
-```
-#xcommand | Ex-dialogue command: {log colorful dialogue async} | 
-#token    | Dialogue token code: {$standard}                   | 
-          |                                                    | 
-Alice     | Oh! Many pegions here!                             | 
-          | --> Text color: {#EE7800}                          | 
-          |                                                    | 
-$standard | log colorful dialogue async                        | Equivalent to the above scope
-          | {Alice}                                            | 
-          | {Oh! Many pegions here!}                           | 
-          | {#EE7800}                                          | 
-```
+![](./Images/SFTextGrammar/DialogueExArg.png)
 
 Dialogue scope with extra arguments works well if a command that requires some extra arguments in addition to a character name and a dialogue line is called frequently. For example, specifying a character's image with a dialogue line, specifying a voice file, etc. In the `HideAndSeek` example, a command that requires text color is used.
 
@@ -290,12 +257,6 @@ Label is used for implementing scenario branching. Scopes in SFText are executed
 In the `HideAndSeek` script, command for scenario branching are used.
 
 ![](./Images/SFTextGrammar/Branch.png)
-
-### Comment
-
-You can write comment texts in comment description parts. Also, you can write comment in other two parts by starting a line with double slash "//".
-
-![](./Images/SFTextGrammar/Comment.png)
 
 ## SFText Script - Editing Support
 

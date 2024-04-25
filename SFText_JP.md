@@ -38,42 +38,30 @@ SFTextの全ての行は、縦線「|」で3つの領域に区切られます。
 
 ### スコープ
 
-スコープはSFTextの構成単位です。スコープは複数の行から構成され、SFTextは複数のスコープから構成されます。スコープには以下の三種類があります。
+スコープはSFTextの構成単位です。スコープは複数の行から構成され、SFTextは複数のスコープから構成されます。スコープには以下の四種類があります。
 
 | スコープ | 役割 |
 | ---- | ---- |
+| コメントスコープ | コメントを書く |
 | コマンドスコープ |　任意のコマンドを呼び出す |
 | 会話スコープ | セリフを表示するためのコマンドを呼び出す |
 | マクロスコープ | 文字列の前処理や、ラベルの付加を行う |
 
-`HideAndSeek`におけるスコープの分類を以下に示します。一つのスコープは複数行に渡って、次のスコープが開始するまで続きます。新たなスコープを開始するには、スコープ記述部に各スコープ特有のシンボルを記述します。
+`HideAndSeek`におけるスコープの分類を以下に示します。一つのスコープは複数行に渡って、次のスコープが開始するまで続きます。それぞれのスコープがどのように開始されるかは、スコープの種類によります。
 
-```
-#token      | Dialogue token code: {$standard}            | Macro Scope
-Girl        | Oh! Many pegions here!                      | Dialogue Scope
-            | --> Text color: {#EE7800}                   | 
-            |                                             | 
-Girl        | Should I look for another place to hide...? | Dialogue Scope
-            |                                             | 
-Narr        | After 1 minutes, you started to seek.       | Dialogue Scope
-            |                                             | 
-Narr        | Where do you search?                        | Dialogue Scope
-            | --> Text color: {#00FFFF}                   | 
-            |                                             | 
-$f-promised | branch on 2 selections async                | Command Scope
-            | Selection 1: {Behind the tree}              | 
-            | - Jump to {Ans1}                            | 
-            | Selection 2: {Under the slide}              | 
-            | - Jump to {Ans2}                            | 
-            |                                             | 
-#label      | //============ {Ans1} ============//        | Macro Scope
-            |                                             | 
-Girl        | Oh, you got me!                             | Dialogue Scope
-            |                                             | 
-$sync       | jump to label                               | Command Scope
-            | Jump to {Exit}.                             | 
-            |                                             | 
-```
+![](./Images/SFTextGrammar/ScopeClassification.png)
+
+### コメントスコープ
+
+コメントスコープでは、コンテンツ記述部にコメントを書くことができます。このスコープを開始する方法は、二つあります。
+
+一つ目の方法は、行をダブルスラッシュ"//"で始めることです。すると、その行の後続のテキストに関係なく、コメントスコープが開始します。そのため、VSCodeでは`Ctrl+/`によって簡単に、好きな行をコメントアウト並びにアンコメントすることができます。
+
+![](./Images/SFTextGrammar/CommentOut.png)
+
+二つ目の方法は、空行によってスコープを終わらせることです。SFTextでは、空行とはスコープ宣言部とコンテンツ記述部の両方が空である行のことを指します。あるスコープの下に空行を置くと、コメントスコープがその次の行からスタートします。
+
+![](./Images/SFTextGrammar/EmptyLineComment.png)
 
 ### コマンドスコープ
 
@@ -108,63 +96,52 @@ $TokenCode | Command Name                                 |
 
 キャラクターのセリフを記述するには、会話スコープを使用します。
 
-会話スコープを開始するには、スコープ宣言部にキャラクターの名前を記述します。そして、スコープの開始行からは、コンテンツ記述部にセリフを記述します。
+会話スコープは、ある行のスコープ宣言部にキャラクター名を書くことによって開始できます。そして、会話スコープのコンテンツ記述部には会話のセリフを書くことができます。
 
 ```
-Character Name | Dialogue Line |
+Name    | Line1                     |
+        | Line2                     |
+        | ...                       |
 ```
 
-セリフは、複数行に渡って記述することができます。複数行に書かれたテキストは、SFTextが読み込まれる際に結合され、一つのテキストになります。
+セリフの前および後ろの空白は、すべて取り去られることに注意してください。
 
-```
-Character Name | Dialogue Line 1                |
-               | Dialogue Line 2                |
-               |                                |
-Character Name | Dialgoue Line 1Dialogue Line 2 | Equivalent to the above text
-```
+また、一つの会話スコープ内に書かれた複数のテキストは、「line break（改行）」を意味する"\<bk>"とともに結合されます。下の会話スコープ内のセリフは、"Hello!\<bk>I'm Alice.\<bk>Nice to meet you!"と、一つのテキストとしてインポートされます。
 
-SFTextにおいては、テキストの前後の空白は除去されることに注意してください。複数のテキスト間に改行や空白を挿入する場合は、リッチテキストを利用したり、シンボルを定義して`string`型用のデコーダーで置き換えたりします。
+![](./Images/SFTextGrammar/LineBreak.png)
 
-```
-Character Name | Dialogue Line 1                |
-               | <sp>Dialogue Line 2            | <sp> is a symbol replaced by a white space
-               | <br>Dialogue Line 3            | <br> means a new line
-```
+会話スコープに書かれた複数のテキストを好きな文字で結合するには、`string`デコーダー内もしくはセリフを表示するコマンドの中で、このシンボルを置き換えます。例えば、以下のデコーダーもしくはコマンドでは、会話スコープ中のセリフは空白で置き換えられます。上の会話スコープは、"Hello! I'm Alice. Nice to meet you!"と表示されます。
+
+改行シンボルを置き換えるにあたり、シンボル"\<bk>"を返す、`SFText.LineBreakSymbol`が利用可能です。
 
 ```cs
+// String decoder
 [DecoderMethod]
 public string ConvertToString(string input)
 {
-    input = input.Replace("<sp>", " ");
-    return input;
+    return input.Replace(SFText.LineBreakSymbol, " ");
+}
+
+// Command that displays a dialogue line
+[CommandMethod("display dialogue")]
+public UniTask DisplayDialogueAsync(string name, string line, CancellationToken cancellationToken)
+{
+    line = line.Replace(SFText.LineBreakSymbol, " ");
+
+    // Display a dialogue line
+    // ...
 }
 ```
 
-> [!WARNING]
-> この仕様は変更される予定です。
->
-> 上の例では、会話スコープ中の複数のテキストを空白でつなぐため、私たちはシンボル\<sp>を定義し、それを空白で置き換えました。しかし、複数のテキストを会話スコープの中に書くたびにそのようなシンボルを書くというのは、ライターにとっては苛立つことであり、意味のないことです。なぜなら、繰り返し、いつも同じシンボルがテキストの間に置かれることが予想されるからです。
->
-> それゆえ、この問題を解決するために、次のバージョンのSFTextがリリースされる予定です。次のバージョンでは、スクリプトがUnityにインポートされる際、会話スコープ中の複数のテキストは前もって定義されたシンボル（おそらく、「line break」を意味する\<bk>になる予定）で自動的に結合されるようになります。プログラマは`string`用のデコーダー、セリフを表示するためのメソッド、もしくは、ほかの場所でそのシンボルを好きな文字に置き換えなければならなくなりますが、ライターは先ほど触れたような、煩わしい問題から解放されます。
->
-> この改善は、ScenarioFlowバージョン1.1.0で実施されるということを気に留めておいてください。
+### 会話スコープのためのマクロスコープ
 
 会話スコープを利用するためには、commandマクロスコープとtokenマクロスコープにより、会話スコープで使用するコマンドとトークンコードを指定しておく必要があります。これは、会話スコープはSFTextがインポートされる際に等価なコマンドスコープに置き換わるためです。
 
-```
-#command  | Dialogue command: {log dialogue async} | 
-#token    | Dialogue token code: {$standard}       | 
-          |                                        | 
-Alice     | Hello, I'm Alice.                      | 
-          |                                        | 
-$standard | log dialogue async                     | Equivalent to the above scope
-          | {Alice}                                | 
-          | {Hello, I'm Alice.}                    | 
-```
+![](./Images/SFTextGrammar/DialogueReplacement.png)
 
 マクロスコープの詳細は後に学習しますが、ここでは、スコープ宣言部にマクロの種類、コンテンツ記述部に波括弧で括られたパラメーターが記述されていることのみ理解しておいてください。
 
-重要な点は、会話スコープは特定のコマンドスコープの省略記法にすぎないということです。会話スコープはキャラクターのセリフを表示するためのコマンドによく合うように設計されていますが、実際はパラメーターの数が合致すれば、どのようなコマンドも会話スコープで扱うことができます。逆に、会話スコープで使用するために設定されたコマンドも、コマンドスコープで呼び出すことができます。`HideAndSeek`の例を以下に示します。
+重要な点は、会話スコープは特定のコマンドスコープの省略記法にすぎないということです。会話スコープはキャラクターのセリフを表示するためのコマンドによく合うように設計されていますが、実際はパラメーターの数が合致すれば、どのようなコマンドも会話スコープで扱うことができます。逆に、会話スコープで使用されるコマンドも、コマンドスコープによって呼び出すことができます。`HideAndSeek`の例を以下に示します。
 
 ```
 $parallel   | log dialogue async         | 
@@ -188,18 +165,7 @@ Character Name | Dialogue Line                      |
 
 追加パラメーター付き会話スコープも、通常の会話スコープ同様、等価なコマンドスコープに置き換わります。
 
-```
-#xcommand | Ex-dialogue command: {log colorful dialogue async} | 
-#token    | Dialogue token code: {$standard}                   | 
-          |                                                    | 
-Alice     | Oh! Many pegions here!                             | 
-          | --> Text color: {#EE7800}                          | 
-          |                                                    | 
-$standard | log colorful dialogue async                        | Equivalent to the above scope
-          | {Alice}                                            | 
-          | {Oh! Many pegions here!}                           | 
-          | {#EE7800}                                          | 
-```
+![](./Images/SFTextGrammar/DialogueExArg.png)
 
 追加パラメーター付き会話スコープは、キャラクターの名前とセリフに加えて、何かしらのパラメーターを必要とするコマンドを頻繁に使用する際に有効です。例えば、セリフと同時にキャラクターの画像を指定する場合や、音声ファイルを指定する場合などです。`HideAndSeek`の例では、テキストに任意の色を指定するコマンドが使用されています。
 
@@ -291,13 +257,6 @@ Girl    | I was behind the tree. I win! | Equivalent to the above scope
 `HideAndSeek`でも、シナリオ分岐のためのコマンドが使用されています。
 
 ![](./Images/SFTextGrammar/Branch.png)
-
-### コメント
-
-コメント文をコメント記述部に書くことができますが、加えて、行をダブルスラッシュ「//」で始めることで、他の二つの領域にコメント文を書くこともできます。
-
-![](./Images/SFTextGrammar/Comment.png)
-
 
 ## SFTextスクリプト - 入力支援
 

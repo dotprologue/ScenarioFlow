@@ -2,6 +2,9 @@
 
 ## Error When Building Applications
 
+> [!NOTE]
+> This bug has been fixed in ScenarioFlow version 1.1.0.
+
 ### Problem
 
 Building an application fails.
@@ -59,6 +62,3 @@ namespace ScenarioFlow.Scripts.Composite.Editor
 Build will succeed.
 
 ![](./Images/Bugs/BuildSucceeded.png)
-
-> [!NOTE]
-> This bug will have been fixed in ScenarioFlow version 1.1.0.

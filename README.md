@@ -8,7 +8,7 @@ See [here](./Bugs.md) for details.
 
 ## Notification
 
-ScenarioFlow version 1.1.0 is comming soon!
+[ScenarioFlow version 1.1.0](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843) has been launched!
 
 It includes the following features:
 
@@ -20,11 +20,9 @@ It includes the following features:
 
 For more details, see [VersionHistory](./VersionHistory.md).
 
-Also, [samples](#sample) will be updated, too.
+When you update ScenarioFlow, you also have to update [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack) to version 1.1.0. In addition, [samples](#sample) have been updated, so please check them after updating SceanrioFlow.
 
-> [!CAUTION]
-> New version of SFText Extension Pack (v1.1.0) for VSCode will be published in advance of ScenarioFlow version 1.1.0.
-> However, continue to use the extension pack v1.0.0 until ScenarioFlow v1.1.0 is available because new SFText Syntax, which the new extension pack includes, may not work well with ScenarioFlow v1.0.0 in some cases.
+If you haven't installed ScenarioFlow yet, let's get it in the Unity Asset Store for free, right now!
 
 ### Acknowledgement
 

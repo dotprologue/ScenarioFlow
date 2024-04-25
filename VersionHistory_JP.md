@@ -63,7 +63,7 @@ public UniTask DisplayDialogueAsync(string name, string line, CancellationToken 
 
 ![](./Images/VersionHistory/v1.1.0/Space.v1.1.0.png)
 
-### Comment Scope
+### コメントスコープ
 
 バージョン1.0.0では、"//"で始まるコメントは他のスコープに影響を与えませんでした。
 
@@ -74,7 +74,7 @@ public UniTask DisplayDialogueAsync(string name, string line, CancellationToken 
 
 ![](./Images/VersionHistory/v1.1.0/Comment.v1.1.0.png)
 
-### Empty Line to Break Scope
+### スコープ終了のための空行
 
 バージョン1.1.0では、一つのスコープは次のスコープが始まるまで持続しました。
 
