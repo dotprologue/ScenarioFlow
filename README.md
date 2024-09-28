@@ -2,27 +2,11 @@
 
 [Japanese README](./README_JP.md)
 
-## Existing Bugs
-
-See [here](./Bugs.md) for details.
-
 ## Notification
 
-[ScenarioFlow version 1.1.0](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843) has been launched!
+[ScenarioFlow Lab](https://scenarioflow-lab.dotprologue.com) has been launched!
 
-It includes the following features:
-
-+ Changes in SFText grammar
-    + a new symbol for dialogue scopes, "line break symbol"
-    + a new scope, "comment scope"
-    + a empty line to end a scope
-+ Bug fixed
-
-For more details, see [VersionHistory](./VersionHistory.md).
-
-When you update ScenarioFlow, you also have to update [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack) to version 1.1.0. In addition, [samples](#sample) have been updated, so please check them after updating SceanrioFlow.
-
-If you haven't installed ScenarioFlow yet, let's get it in the Unity Asset Store for free, right now!
+This is a blog built to deepen user's understanding of ScenarioFlow. It provides articles about ScenarioFlow and the peripheral knowledge such as UniTask and Dependency Injection. There are very few articles for now, but new articles are going to be published in series. So we hope that you will utilize it.
 
 ### Acknowledgement
 
@@ -32,10 +16,9 @@ We would like to thank Aki Uzuki (@aki_uzuki3 on X, Twitter), who designed and i
 
 ## Contacts
 
-+ `support@dotprologue.com`
-    + Questions, troubles, requests, or feedbacks
-+ `contact@dotprologue.com`
-    + For other business
+Contact us by sending an email at the following email address, or you can send a message on Issues on GitHub.
+
+`contact@dotprologue.com`
 
 Any feedback is welcome. Feel free to contact us! (English or Japanese is fine)
 
@@ -132,7 +115,7 @@ Choice 2:
 
 ![](./Movies/GettingStarted/ExampleB.gif)
 
-## Hoe to Play Dialogue Scenes
+## How to Play Dialogue Scenes
 
 Let's check how `HideAndSeek.sftxt` was runned and how the dialogue scene was played. Open the file `Scripts/ScenarioManager.cs`.
 

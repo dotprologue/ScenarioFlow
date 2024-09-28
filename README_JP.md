@@ -2,27 +2,12 @@
 
 [English README](./README.md)
 
-## 存在しているバグ
-
-詳しくは、[ここ](./Bugs_JP.md)を参照してください。
 
 ## お知らせ
 
-[ScenarioFlowバージョン1.1.0](https://assetstore.unity.com/packages/tools/integration/scenarioflow-277843)がリリースされました！
+この度、[ScenarioFlow Lab](https://scenarioflow-lab.dotprologue.com/ja)がオープンしました！
 
-このバージョンアップのポイントは以下の通りです。
-
-+ SFTextの文法に関する変更
-    + 会話スコープのための新しいシンボル"line break symbol"
-    + 新たなスコープ「コメントスコープ」
-    + スコープを終了するための空行
-+ バグ修正
-
-さらなる詳細は、[VersionHistory_JP](./VersionHistory_JP.md)を参照してください。
-
-ScenarioFlowをアップデートの際は、[SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)の、バージョン1.1.0へのアップデートも必要になります。加えて、[サンプル](#サンプル)もアップデートされたので、ScenarioFlowをアップデートした後は、そちらもご確認ください。
-
-まだScenarioFlowをインストールしていなければ、今すぐ無料で、Unityアセットストアから入手しましょう！
+これは、より多くの方にScenarioFlowについての理解を深めてもらうことを目的としたブログです。ScenarioFlowと、その周辺知識（UniTaskやDependency Injectionなど）に関する記事を投稿していく予定です。現在は記事数が少ないですが、これから順次追加していく予定ですのでぜひご活用ください。
 
 ### 謝辞
 
@@ -32,10 +17,9 @@ ScenarioFlowをアップデートの際は、[SFText Extension Pack](https://mar
 
 ## コンタクト
 
-+ `support@dotprologue.com`
-    + 質問、トラブル、要望、フィードバック
-+ `contact@dotprologue.com`
-    + その他の要件
+下記アドレスにメールを送るか、Issuesでご連絡ください。
+
+`contact@dotprologue.com`
 
 どのようなフィードバックでも歓迎します。気軽にご連絡ください！（英語または日本語に対応可能です）
 
