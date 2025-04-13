@@ -5,9 +5,16 @@
 
 ## お知らせ
 
-この度、[ScenarioFlow Lab](https://scenarioflow-lab.dotprologue.com/ja)がオープンしました！
+間もなく、ScenarioFlowバージョン1.2.0がリリースされます！今回のアップデートには、強力な新機能、「**localized SFText**」が含まれます。この機能は、ストーリーを**多言語**で実装する際の大きな助けとなります。
 
-これは、より多くの方にScenarioFlowについての理解を深めてもらうことを目的としたブログです。ScenarioFlowと、その周辺知識（UniTaskやDependency Injectionなど）に関する記事を投稿していく予定です。現在は記事数が少ないですが、これから順次追加していく予定ですのでぜひご活用ください。
+<table>
+  <tr>
+    <td><img src="./Images/News/LocalizedSFTextEditor.png" width="100%"/></td>
+    <td><img src="./Images/News/LocalizedSFTextSample.png" width="100%"/></td>
+  </tr>
+</table>
+
+バージョン1.2.0は現在開発中です。楽しみにお待ちください。
 
 ### 謝辞
 
@@ -30,6 +37,8 @@
     + Unityアセットストアへのリンク
 + [SFText Extension Pack](https://marketplace.visualstudio.com/items?itemName=dotprologue.sftext-extension-pack)
     + SFText用のVSCode拡張機能
++ [ScenarioFlow Lab](https://scenarioflow-lab.dotprologue.com/ja)
+  + ScenarioFlow学習サイト
 ### 外部ツール
 + [UniTask](https://github.com/Cysharp/UniTask.git)
     + ScenarioFlowは非同期処理を扱うためにUniTaskを使用します
