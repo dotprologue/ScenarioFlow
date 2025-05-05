@@ -2,12 +2,43 @@
 
 ## Table of Contents
 
-+ [SFText Script - Grammar](#sftext-script---grammar)
-+ [SFText Script - Editing Support](#sftext-script---editing-support)
+- [SFText Script](#sftext-script)
+  - [Table of Contents](#table-of-contents)
+  - [SFText Script - Grammar](#sftext-script---grammar)
+    - [Split by Vertical Bars](#split-by-vertical-bars)
+    - [Scope](#scope)
+    - [Comment Scope](#comment-scope)
+    - [Command Scope](#command-scope)
+    - [Dialogue Scope](#dialogue-scope)
+    - [Macro Scope for Dialogue Scope](#macro-scope-for-dialogue-scope)
+    - [Dialogue Scope with Extra Arguments](#dialogue-scope-with-extra-arguments)
+    - [Macro Scope](#macro-scope)
+    - [Command Macro Scope](#command-macro-scope)
+    - [Xcommand Macro Scope](#xcommand-macro-scope)
+    - [Token Macro scope](#token-macro-scope)
+    - [Define Macro Scope](#define-macro-scope)
+    - [Label Macro Scope](#label-macro-scope)
+  - [SFText Script - Editing Support](#sftext-script---editing-support)
+    - [Command Snippets](#command-snippets)
+    - [Extra Arguments Snippets](#extra-arguments-snippets)
+    - [Macro Snippets](#macro-snippets)
+    - [Editing Commands](#editing-commands)
+      - [Move Cursor](#move-cursor)
+      - [Insert Arguments](#insert-arguments)
+      - [Insert Scope Below](#insert-scope-below)
+      - [Insert Scope Above](#insert-scope-above)
+      - [Toggle Line Comment](#toggle-line-comment)
+      - [Toggle Scope Comment](#toggle-scope-comment)
+    - [SFText Formatter](#sftext-formatter)
+      - [Setting 1: Half-width Characters](#setting-1-half-width-characters)
+      - [Setting 2: Alignment Ratio of Half-/Full-width Characters](#setting-2-alignment-ratio-of-half-full-width-characters)
+    - [The Configuration of JSON File](#the-configuration-of-json-file)
+    - [SFText Command List](#sftext-command-list)
+    - [SFText Snippets Builder](#sftext-snippets-builder)
 
-### Note
 
-Shortcut keys mentioned in the following sections are for Windows. If you are using Mac, see the keybinding in VSCode.
+> [!NOTE]
+> Shortcut keys mentioned in the following sections are for Windows. If you are using Mac, see the keybinding in VSCode.
 
 ## SFText Script - Grammar
 
@@ -55,15 +86,11 @@ The scope classification example of the `HideAndSeek` script is shown below. A s
 
 ### Comment Scope
 
-In a comment scope, you can write comments in content description parts. There are two ways to start this scope.
+In a comment scope, you can write comments in content description parts. To start this scope, you place double slash "//" at the beginning of a line.
 
-The first way is to place double slash "//" at the beginning of a line. Then a comment scope starts regardless of the following text at the line. So you can easily comment out or uncomment any lines with `Ctrl+/` in VSCode.
+As a side note, you can easily comment out or uncomment any lines with `Ctrl+/` in VSCode.
 
 ![](./Images/SFTextGrammar/CommentOut.png)
-
-The second way is to end a scope with an empty line. In SFText, empty line means a line both of whose scope declaration part and content description part are empty. If you place an empty line under a scope, a comment scope will start from the next line.
-
-![](./Images/SFTextGrammar/EmptyLineComment.png)
 
 ### Command Scope
 
@@ -402,23 +429,106 @@ You can cahnge snippets inserted to macro scopes with the configuration in VSCod
 
 ![](./Images/SFTextExtensions/MacroSnippetSettings.png)
 
-### Shortcut keys
+### Editing Commands
 
-If you press the `Shift+Enter` keys, the cursor will move in the order of the scope decralation part, the content description part, and the comment description part. In addition, vertical bars are inserted automatically if there are not enough vertical bars. So you don't have to enter vertical bars manually, but use this shortcut key.
+You can use the commands as listed below for efficient SFText editing.
+
+| Command | Shortcut key (windows) | Functionality |
+| --- | --- | --- |
+| Move Cursor | Shift+Enter | Move the cursor based on the vertical bar positions |
+| Insert Arguments | Alt+Enter | Insert a scope argument snippet |
+| Insert Scope Below | Ctrl+Enter | Insert a new line below the scope |
+| Insert Scope Above | Ctrl+Shift+Enter | Insert a new line above the scope |
+| Toggle Line Comment | Ctrl+/ | Comment out or uncomment every line in the selection |
+| Toggle Scope Comment | Ctrl+Shift+/ | Comment out or uncomment every scope start line in the selection |
+
+#### Move Cursor
+
+By calling this command, you can move the cusor to each vetical bar position in order. Also, difficient vertical bars will be inserted by the command. 
+
+Note that you don't have to add vertical bars manually, but you can rely on this command (and other commands) to insert required vertical bars into lines.
 
 ![](./Movies/SFTextExtensions/MoveCursor.gif)
 
-If you press the `Ctrl+Enter` keys, a new line will be inserted and the document will be formatted.
+#### Insert Arguments
 
-![](./Movies/SFTextExtensions/NewLine.gif)
+This command inserts a argument snippet for the target scope.
 
-Also, if you press the `Alt+Enter` keys, a snippet for arugments will be inserted and the document will be formatted.
+![](./Movies/SFTextExtensions/InsertArguments.gif)
 
-### The Configuration of Half-Width and Full-Width Characters
+#### Insert Scope Below
 
-Positions of vertical bars are adjusted based on the number of half-width characters and the number of full-width characters at lines when the document is formetted in SFText. If positions of some vertical bars are not adjusted properly, that is because whether any character is half-width or full-width is not judged properly. In this case, you can specify cahracters that are recognized as half-widh characters in the configuration in VSCode. You can specify the target range of characters with the format like `a-zA-Z`, and you can also use UTF-8 character code like the initial configuration as shown below.
+This command inserts a new line below the target scope.
 
-![](./Images/SFTextExtensions/HalfWidthSetting.png)
+![](./Movies/SFTextExtensions/InsertScopeBelow.gif)
+
+#### Insert Scope Above
+
+This command inserts a new line above the target scope.
+
+![](./Movies/SFTextExtensions/InsertScopeAbove.gif)
+
+#### Toggle Line Comment
+
+This command comments out or uncomments the lines in the selection.
+
+![](./Movies/SFTextExtensions/ToggleLineComment.gif)
+
+#### Toggle Scope Comment
+
+This command comments out or uncomments the start lines of the scopes in the selection.
+
+![](./Movies/SFTextExtensions/ToggleScopeComment.gif)
+
+### SFText Formatter
+
+The SFText formatter, which aligns SFTexts, is provided as a VSCode extension. The formatting is performed when the editing commands are called, but you can perform it manually by calling the `Format Documet` command.
+
+![](./Movies/Formatter/Formatting.gif)
+
+In fact, the formatter may not work appropriately in your environment especially if your document includes some full-width characters. The formatter distinguishes half-width characters and full-width characters to align the target SFText. However, it is unfortunately challenging to determine whether a character is half-width or full-width precisely, and both half-width character length and full-width character length are different depending on the font. Consequently, you may have to change some settings for the proper alignment, although the default settings should work well in many cases.
+
+If the formatter does not work appropriately in your environment, it will be resolved by modifying the following settings. You can access them by opening the VSCode settings and find them by entering "sftext" on the search console.
+
+![](./Images/Formatter/FormatterSettings.png)
+
+> [!IMPORTANT]
+> If your SFText is not aligned by the formatter appropriately even though you are sure that appropriate values are specified for the three settings in the SFText formatter (as shown in the figure above), it may be due to the font you are using itself. It was found that the formatter doesn't work with the default font in some cases and it is the problem caused by the font itself.
+> 
+> In such a case, you may want to use different fonts to avoid alignment issues.
+
+> [!TIP]
+> If you want to use a specific font when writing SFTexts but want to use different fonts when writing other scripts, you can specify the font that is valid only when you edit SFTexts by modifying the settings file as follows:
+> 
+> ```json
+> {
+>     "[sftext]": {
+>         "editor.fontFamily": "font-you-want-to-use",
+>     }
+> }
+> ```
+
+#### Setting 1: Half-width Characters
+
+You specify which characters are recognized as half-width characters in the item `Half Width Character List`. In other words, characters that are not registered here are recognized as full-width characters.
+
+The target characters are desribed in the regular-expression-like manner as shown above. The figure above shows the initial setting, which includes basic alphabets and symbols.
+
+#### Setting 2: Alignment Ratio of Half-/Full-width Characters
+
+In the items `Half Width Constant` and `Full Width Constant`, you specify the ratio between half-width characters and full-width characters required for the alignment. The former item  specifies the number of half-width characters while the latter item specifies the number of full-width characters required for the alignemnt.
+
+For example, with the default font, we specify 20 for the half-width constant and 11 for the full-width constant because 20 half-width characters align with 11 full-width characters.
+
+![](./Images/Formatter/DefaultFontAlignment.png)
+
+Another example is the "BIZ UD Gothic" font. With this font, 2 half-width character align with 1 full-width character, so that the half-width constant is set to 2 while the full-width constant is set to 1.
+
+![](./Images/Formatter/BIZUD_Alignment.png)
+
+> [!NOTE]
+>
+> You are likely to modify these settings when you switch the font used in SFText editing.
 
 ### The Configuration of JSON File
 

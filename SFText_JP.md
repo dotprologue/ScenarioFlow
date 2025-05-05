@@ -2,12 +2,42 @@
 
 ## 目次
 
-+ [SFTextスクリプト - 文法](#sftextスクリプト---文法)
-+ [SFTextスクリプト - 入力支援](#sftextスクリプト---入力支援)
+- [SFTextスクリプト](#sftextスクリプト)
+  - [目次](#目次)
+  - [SFTextスクリプト - 文法](#sftextスクリプト---文法)
+    - [縦線区切り](#縦線区切り)
+    - [スコープ](#スコープ)
+    - [コメントスコープ](#コメントスコープ)
+    - [コマンドスコープ](#コマンドスコープ)
+    - [会話スコープ](#会話スコープ)
+    - [会話スコープのためのマクロスコープ](#会話スコープのためのマクロスコープ)
+    - [追加パラメーター付き会話スコープ](#追加パラメーター付き会話スコープ)
+    - [マクロスコープ](#マクロスコープ)
+    - [commandマクロスコープ](#commandマクロスコープ)
+    - [xcommandマクロスコープ](#xcommandマクロスコープ)
+    - [tokenマクロスコープ](#tokenマクロスコープ)
+    - [defineマクロスコープ](#defineマクロスコープ)
+    - [labelマクロスコープ](#labelマクロスコープ)
+  - [SFTextスクリプト - 入力支援](#sftextスクリプト---入力支援)
+    - [コマンドスニペット](#コマンドスニペット)
+    - [追加パラメータースニペット](#追加パラメータースニペット)
+    - [マクロスニペット](#マクロスニペット)
+    - [編集用コマンド](#編集用コマンド)
+      - [Move Cursor](#move-cursor)
+      - [Insert Arguments](#insert-arguments)
+      - [Insert Scope Below](#insert-scope-below)
+      - [Insert Scope Above](#insert-scope-above)
+      - [Toggle Line Comment](#toggle-line-comment)
+      - [Toggle Scope Comment](#toggle-scope-comment)
+    - [SFTextフォーマッタ](#sftextフォーマッタ)
+      - [設定1：半角文字](#設定1半角文字)
+      - [設定2：半角・全角文字の整形比率](#設定2半角全角文字の整形比率)
+    - [JSONファイルの設定](#jsonファイルの設定)
+    - [SFText Command List](#sftext-command-list)
+    - [SFText Snippets Builder](#sftext-snippets-builder)
 
-### Note
-
-ここで紹介されているショートカットキーは、Windowsマシンの場合です。Macマシンを使用している場合は、VSCodeのKeyboard Shortcutsでキー割り当てを確認してください。
+> [!NOTE]
+> ここで紹介されているショートカットキーは、Windowsマシンの場合です。Macマシンを使用している場合は、VSCodeのKeyboard Shortcutsでキー割り当てを確認してください。
 
 ## SFTextスクリプト - 文法
 
@@ -53,15 +83,11 @@ SFTextの全ての行は、縦線「|」で3つの領域に区切られます。
 
 ### コメントスコープ
 
-コメントスコープでは、コンテンツ記述部にコメントを書くことができます。このスコープを開始する方法は、二つあります。
+コメントスコープでは、コンテンツ記述部にコメントを書くことができます。このスコープを開始するには、行をダブルスラッシュ"//"で始めます。
 
-一つ目の方法は、行をダブルスラッシュ"//"で始めることです。すると、その行の後続のテキストに関係なく、コメントスコープが開始します。そのため、VSCodeでは`Ctrl+/`によって簡単に、好きな行をコメントアウト並びにアンコメントすることができます。
+VSCodeでは`Ctrl+/`によって簡単に、好きな行をコメントアウト並びにアンコメントすることができます。
 
 ![](./Images/SFTextGrammar/CommentOut.png)
-
-二つ目の方法は、空行によってスコープを終わらせることです。SFTextでは、空行とはスコープ宣言部とコンテンツ記述部の両方が空である行のことを指します。あるスコープの下に空行を置くと、コメントスコープがその次の行からスタートします。
-
-![](./Images/SFTextGrammar/EmptyLineComment.png)
 
 ### コマンドスコープ
 
@@ -403,24 +429,85 @@ public class MessageLogger : IReflectable
 
 ![](./Images/SFTextExtensions/MacroSnippetSettings.png)
 
-### ショートカットキー
+### 編集用コマンド
 
-`Shift+Enter`を押すと、カーソルの位置がスコープ宣言部、コンテンツ記述部、コメント記述部の順に移動します。縦線が不足している場合は自動で挿入されるので、SFTextで縦線を入力するときは、`Sift+\`ではなくこのショートカットキーを利用するようにします。
+SFTextの効率的な編集のため、以下のコマンドを使用できます。
+
+| Command | Shortcut key (windows) | Functionality |
+| --- | --- | --- |
+| Move Cursor | Shift+Enter | 縦線の位置に基づきカーソルを移動させる |
+| Insert Arguments | Alt+Enter | パラメータスニペットを挿入する |
+| Insert Scope Below | Ctrl+Enter | スコープの下に新たな行を挿入する |
+| Insert Scope Above | Ctrl+Shift+Enter | スコープの上に新たな行を挿入する |
+| Toggle Line Comment | Ctrl+/ | 選択範囲の各行をコメントアウトまたはアンコメントする |
+| Toggle Scope Comment | Ctrl+Shift+/ | 選択範囲の各スコープ開始行をコメントアウトまたはアンコメントする |
+
+#### Move Cursor
+
+このコマンドにより、各縦線の位置へ、順番にカーソルを動かすことができます。また、不足している縦線が挿入されます。
+
+縦線を手動で追加する必要はなく、このコマンド（と他のコマンド）により必要な分の縦線を追加できることを覚えておいてください。
 
 ![](./Movies/SFTextExtensions/MoveCursor.gif)
 
-`Ctrl+Enter`を押すと、改行と同時にテキストがフォーマットされます。
+#### Insert Arguments
 
-![](./Movies/SFTextExtensions/NewLine.gif)
+このコマンドは、対象のスコープへパラメータスニペットを挿入します。
+
+![](./Movies/SFTextExtensions/InsertArguments.gif)
+
+#### Insert Scope Below
+
+このコマンドは、新たな行を対象のスコープの下に挿入します。
+
+![](./Movies/SFTextExtensions/InsertScopeBelow.gif)
+
+#### Insert Scope Above
+
+このコマンドは、新たな行を対象のスコープの上に挿入します。
+
+![](./Movies/SFTextExtensions/InsertScopeAbove.gif)
+
+#### Toggle Line Comment
+
+このコマンドは、選択範囲の行をコメントアウトまたはアンコメントします。
+
+![](./Movies/SFTextExtensions/ToggleLineComment.gif)
+
+#### Toggle Scope Comment
+
+このコマンドは、選択範囲のスコープ開始行をコメントアウトまたはアンコメントします。
+
+![](./Movies/SFTextExtensions/ToggleScopeComment.gif)
 
 
-なお、`Alt+Enter`ではパラメーター用のスニペットが挿入されますが、その際にもテキストのフォーマットが実行されます。
+### SFTextフォーマッタ
 
-### 半角文字と全角文字の設定
+VSCodeの拡張機能として、SFTextを整形するためのフォーマッタが利用可能です。フォーマットは編集用コマンドが呼び出されるときに実行されますが、`Format Document`コマンドにより手動で呼び出すこともできます。
 
-SFTextにおいてテキストのフォーマットが実行される際は、半角文字と全角文字の数を元に縦線の位置が揃えられます。テキストのフォーマットによって縦線の位置が揃わない場合、ある文字の半角と全角が正しく判定されていません。その場合、VSCodeの設定により、半角文字として判定されるべき文字を指定できます。対象の文字は、`a-zA-Z`のように範囲指定ができ、下の初期設定のようにUTF-8の文字コードを使用することもできます。
+![](./Movies/Formatter/Formatting.gif)
 
-![](./Images/SFTextExtensions/HalfWidthSetting.png)
+実際は、特にドキュメントが全角文字を含んでいる場合、フォーマッタはユーザの環境でうまく動かないかもしれません。フォーマッタは、対象のSFTextを整形するために、半角文字と全角文字を区別します。しかし、正確に半角文字と全角文字を判別することは難しく、半角・全角文字共に、フォントによってそれぞれの幅は異なります。初期設定は多くの場合正しく動作するはずですが、結果的に、適切な整形のために以下の設定を変更する必要があるかもしれません。
+
+![](./Images/Formatter/FormatterSettings.png)
+
+#### 設定1：半角文字
+
+項目`Half Width Character List`で、どの文字が半角文字として認識されるのかを指定できます。言い換えれば、ここで登録されない文字は全角文字として認識されます。
+
+対象となる文字は、上の画像で示されるように、正規表現のような形で記述できます。上の画像は初期設定を示しており、これは基本のアルファベットと記号を含んでいます。
+
+#### 設定2：半角・全角文字の整形比率
+
+項目`Half Width Constant`（半角定数）と`Full Width Constant`（全角定数）では、整形のために求められる半角文字と全角文字の比率を指定します。前者は整形のために必要な半角文字の数を、後者は全角文字の数を表します。
+
+例えば、デフォルトのフォントでは、半角定数として20を、全角定数として11を示します。これは、20の半角文字が、11の全角文字でちょうど整列するためです。
+
+![](./Images/Formatter/DefaultFontAlignment.png)
+
+もう一つの例、"BIZ UD Gothic"フォントでは、2つの半角文字が、1つの全角文字とともに整列します。そのため、半角定数は2に、全角定数は1に設定されます。
+
+![](./Images/Formatter/BIZUD_Alignment.png)
 
 ### JSONファイルの設定
 

@@ -2,18 +2,56 @@
 
 [Japanese README](./README_JP.md)
 
+[Version History](./VersionHistory.md)
+
+## Table of Contents
+
+- [ScenarioFlow](#scenarioflow)
+  - [Table of Contents](#table-of-contents)
+  - [News](#news)
+    - [Acknowledgement](#acknowledgement)
+  - [Contacts](#contacts)
+  - [URLs](#urls)
+    - [ScenarioFlow](#scenarioflow-1)
+    - [External](#external)
+    - [Sample](#sample)
+- [Introductory Topics](#introductory-topics)
+  - [Introduction](#introduction)
+    - [What Is ScenarioFlow?](#what-is-scenarioflow)
+    - [Why ScenarioFlow?](#why-scenarioflow)
+  - [Getting Started](#getting-started)
+  - [How to Play Dialogue Scenes](#how-to-play-dialogue-scenes)
+    - [Command and Script](#command-and-script)
+    - [ScenarioScript and ScenarioBook](#scenarioscript-and-scenariobook)
+    - [ScenarioBookPublisher](#scenariobookpublisher)
+    - [ScenarioBookReader](#scenariobookreader)
+  - [New Commands and Execution](#new-commands-and-execution)
+  - [Prameter Types and Decoders](#prameter-types-and-decoders)
+- [Practical Topics](#practical-topics)
+  - [New Async Commands](#new-async-commands)
+  - [Token Code](#token-code)
+  - [SFText Script](#sftext-script)
+  - [Localized SFText](#localized-sftext)
+  - [Composite Script](#composite-script)
+  - [Scenario Progression Controls](#scenario-progression-controls)
+  - [Scenario Branching](#scenario-branching)
+  - [The Skip Mode](#the-skip-mode)
+- [Advanced Topics](#advanced-topics)
+  - [General Token Code](#general-token-code)
+  - [Advanced Scenario Progression Controls](#advanced-scenario-progression-controls)
+  - [Token Code in the System](#token-code-in-the-system)
+  - [The Structure of the Scenario Book](#the-structure-of-the-scenario-book)
+
 ## News
 
-ScenarioFlow version 1.2.0 is going to be released soon! This update includes a new strong feature, "**localized SFText**," which helps to make stories in **multiple languages** efficiently.
+[ScenarioFlow version 1.2.0](./VersionHistory.md) is going to be released soon! This update includes a new strong feature, "[**localized SFText**](./LocalizedSFText.md)," which helps to make stories in **multiple languages** efficiently.
 
-<table>
-  <tr>
-    <td><img src="./Images/News/LocalizedSFTextEditor.png" width="100%"/></td>
-    <td><img src="./Images/News/LocalizedSFTextSample.png" width="100%"/></td>
-  </tr>
-</table>
+![](./Images/LocalizedSFText/ModifyScope_Sync.gif)
 
-We are currently develping it and looking forward to providing the new ScenarioFlow!
+ScenarioFlow version 1.2.0 is currently under review. We will inform you once the review is complete and it becomes available!
+
+> [!CAUTION]
+> Please keep in mind that this README was updated and currently includes information about the latest version, however, the latest version might not be available by the time you are reading this page.
 
 ### Acknowledgement
 
@@ -51,27 +89,9 @@ Any feedback is welcome. Feel free to contact us! (English or Japanese is fine)
     + A sample system with practical functions
 + [SavableSFSample](https://github.com/dotprologue/SavableSFSample.git)
     + A sample system with functions for saving scenario data
-## Table of Contents
 
-+ Introductory Topics
-    + [Introduction](#introduction)
-    + [Getting Started](#getting-started)
-    + [How to Play Dialogue Scenes](#hoe-to-play-dialogue-scenes)
-    + [New Commands and Execution](#new-commands-and-execution)
-    + [Parameter Types and Decoders](#prameter-types-and-decoders)
-+ Practical Topics
-    + [New Async Commands](#new-async-commands)
-    + [Token Code](#token-code)
-    + [SFText Script](#sftext-script)
-    + [Composite Script](#composite-script)
-    + [Scenario Progression Controls](#scenario-progression-controls)
-    + [Scenario Branching](#scenario-branching)
-    + [The Skip Mode](#the-skip-mode)
-+ Advanced Topics
-    + [General Token Code](#general-token-code)
-    + [Advanced Scenario Progression Controls](#advanced-scenario-progression-controls)
-    + [Token Code in the System](#token-code-in-the-system)
-    + [The Structure of the Scenario Book](#the-structure-of-the-scenario-book)
+# Introductory Topics
+
 ## Introduction
 
 ### What Is ScenarioFlow?
@@ -401,20 +421,22 @@ When creating a decoder, you have to follow the rules as listed below.
 + The target type is the return type of a decoder method
 + Any class that declares any decoder has to implement the `IReflectable` interface, and it has to be passed to the constructor of the `ScenarioBookPublisher` class
 
-### Note
-
-The rules you have to follow when creating commands and decoders are listed below.
-
-+ Command
-    + A method is exported as a command by attaching the `CommandMethod` attribute with the command name
-    + Each parameter type that is used in any command has a corresponding decoder
-+ Decoder
-    + A method is exported as a decoder by attaching the `DecoderMethod` attribute
-    + Any decoder method have to have only single `string` type parameter
-    + The target type is the return type of aa decoder method
-+ Common
-    + Any class that declares any command or decoder have to implement the `IReflectable` interface, and have to be passed to the constructor of the `ScenarioPublisher` class
-    + Each command name and each target type of a decoder that are registered are unique
+> [!NOTE]
+> 
+> The rules you have to follow when creating commands and decoders are listed below.
+> 
+> + Command
+>     + A method is exported as a command by attaching the `CommandMethod` attribute with the command name
+>     + Each parameter type that is used in any command has a corresponding decoder
+> + Decoder
+>     + A method is exported as a decoder by attaching the `DecoderMethod` attribute
+>     + Any decoder method have to have only single `string` type parameter
+>     + The target type is the return type of aa decoder method
+> + Common
+>     + Any class that declares any command or decoder have to implement the `IReflectable` interface, and have to be passed to the constructor of the `ScenarioPublisher` class
+>     + Each command name and each target type of a decoder that are registered are unique
+>
+# Practical Topics
 
 ## New Async Commands
 
@@ -649,28 +671,32 @@ $promised | log delayed message async |
           | {Good evening.} {7}       | 
 ```
 
-### Note
-
-Criteria to select a suitable token code for an async command depending on situation are listed below.
-
-+ `standard`, `forced`, or `promised`
-    + `standard` if cancellation is fine
-    + `forced` if cancellation is undesirable but OK
-    + `promised` if cancellation is definitely undesirable or it causes error in the system
-+ Whether attaching `f-`
-    + Usually not attached to async commands for displaying dialouge lines
-    + Attached to async commands related to directions like player selection, scene transition, animation, etc.
-+ `serial`
-    + If you want to combine multiple animations to one
-    + When attaching delay to narrative directions
-+ `parallel`
-    + When executing multiple directions or processing simultaneously
-
-For example, let's consider what type of token code shoud be specified for a direction that presents player some selections. Firstly, `f-` should be attached because the next command should be invoked right after the player answers the selection. In addition, since the player must answer the selection so that the scenario can branch, in other words, if the selection were canceled, the scenario couldn't branch to any routes, we have to specify `f-promised`. This is one of typical patterns, which is seen in the `HideAndSeek` script.
+> [!NOTE]
+> 
+> Criteria to select a suitable token code for an async command depending on situation are listed below.
+> 
+> + `standard`, `forced`, or `promised`
+>     + `standard` if cancellation is fine
+>     + `forced` if cancellation is undesirable but OK
+>     + `promised` if cancellation is definitely undesirable or it causes error in the system
+> + Whether attaching `f-`
+>     + Usually not attached to async commands for displaying dialouge lines
+>     + Attached to async commands related to directions like player selection, scene transition, animation, etc.
+> + `serial`
+>     + If you want to combine multiple animations to one
+>     + When attaching delay to narrative directions
+> + `parallel`
+>     + When executing multiple directions or processing simultaneously
+> 
+> For example, let's consider what type of token code shoud be specified for a direction that presents player some selections. Firstly, `f-` should be attached because the next command should be invoked right after the player answers the selection. In addition, since the player must answer the selection so that the scenario can branch, in other words, if the selection were canceled, the scenario couldn't branch to any routes, we have to specify `f-promised`. This is one of typical patterns, which is seen in the `HideAndSeek` script.
 
 ## SFText Script
 
 See [SFText](./SFText.md) for details.
+
+## Localized SFText
+
+Used for language localization. See [LocalizedSFText](./LocalizedSFText.md) for details.
 
 ## Composite Script
 
@@ -872,6 +898,8 @@ UniTaskAsyncEnumerable.EveryUpdate()
 ```
 
 The `ISkipActivator` class declares the two member properties, `Duration` and `IsActive`. You can change the waiting time awaited between two async commands when the skip mode is enabled with the `Duration` property, and you can toggle the skip mode enabled and disabled with the `IsActive` property.
+
+# Advanced Topics
 
 ## General Token Code
 
