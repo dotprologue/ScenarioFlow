@@ -44,14 +44,15 @@
 
 ## お知らせ
 
-間もなく、[ScenarioFlowバージョン1.2.0](./VersionHistory_JP.md)がリリースされます！今回のアップデートには、強力な新機能、「[**localized SFText**](./LocalizedSFText_JP.md)」が含まれます。この機能は、ストーリーを**多言語**で実装する際の大きな助けとなります。
+ScenarioFlowバージョン1.2.0がリリースされました！[Unityアセットストア](https://assetstore.unity.com/packages/slug/277843)にてダウンロード可能です。
+
+今回のアップデートは、強力な新機能、[**localized SFText**](./LocalizedSFText_JP.md)を含みます。これは、ストーリーを複数の言語で効率的に作成するのに役立ちます。
 
 ![](./Images/LocalizedSFText/ModifyScope_Sync.gif)
 
-ScenarioFlowバージョン1.2.0は現在審査中です。審査が完了し、利用可能になり次第お知らせします。
+アップデートの詳細は、[バージョン履歴](./VersionHistory_JP.md)を確認してください。もし問題や質問などがあれば、どのようなものでもご気軽に[GitHub Issues](https://github.com/dotprologue/ScenarioFlow/issues)で新しいissueを作成してください。もしくは、`contact@dotprologue.com`へメールを送信することもできます。 
 
-> [!CAUTION]
-> このREADMEは更新され、現在最新版の情報を含んでいます。ただし、この記事が読まれている時点で、まだ最新版は利用可能ではないかもしれません。
+ScenarioFlowにご興味を持っていただき、ありがとうございます！
 
 ### 謝辞
 

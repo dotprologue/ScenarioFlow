@@ -44,14 +44,15 @@
 
 ## News
 
-[ScenarioFlow version 1.2.0](./VersionHistory.md) is going to be released soon! This update includes a new strong feature, "[**localized SFText**](./LocalizedSFText.md)," which helps to make stories in **multiple languages** efficiently.
+ScenarioFlow version 1.2.0 has been launched! It is available at [the Unity Asset Store](https://assetstore.unity.com/packages/slug/277843).
+
+This update includes a new strong feature, [**localized SFText**](./LocalizedSFText.md), which helps to make stories in **multiple languages** efficiently.
 
 ![](./Images/LocalizedSFText/ModifyScope_Sync.gif)
 
-ScenarioFlow version 1.2.0 is currently under review. We will inform you once the review is complete and it becomes available!
+See [the version history](./VersionHistory.md) for the details of the update. If you have any issues or questions, feel free to create a new issue on [the GitHub Issues](https://github.com/dotprologue/ScenarioFlow/issues), or you can send an email to `contact@dotprologue.com`.
 
-> [!CAUTION]
-> Please keep in mind that this README was updated and currently includes information about the latest version, however, the latest version might not be available by the time you are reading this page.
+Thank you for having interest in ScenarioFlow!
 
 ### Acknowledgement
 
