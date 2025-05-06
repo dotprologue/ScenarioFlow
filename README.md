@@ -54,6 +54,13 @@ See [the version history](./VersionHistory.md) for the details of the update. If
 
 Thank you for having interest in ScenarioFlow!
 
+> [!CAUTION]
+> If you are using macOS, you may encounter a compilation error from `Assets/ScenarioFlow/ScenarioScripts/SFText/Localization/Editor/SFTextFormatter.cs`. The cause of this issue was already identified, and a modified version (ScenarioFlow.1.2.1) is going to be published soon. As a temporal solution, you can fix the error by replacing the existing file (`SFTextFormatter.cs` at the path above) with the modified one you can download via the link below.
+> 
+> [SFTextFormatter.zip](https://github.com/user-attachments/files/20055708/SFTextFormatter.zip)
+>
+> You don't have to care about this issue if you are using Windows.
+
 ### Acknowledgement
 
 We would like to thank Aki Uzuki (@aki_uzuki3 on X, Twitter), who designed and illustrated very attractive two characters, Sheena and Rio. They are the mascots of ScenarioFlow and appear on many samples (even in the movie below). Why don't you visit [Aki Uzuki's X (Twitter)](https://twitter.com/aki_uzuki3) to see Uzuki's other works? 
