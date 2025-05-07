@@ -420,7 +420,7 @@ Note that we have to assign scope annotations to the new gloabl/local scopes, bu
 >
 > Note that we shuold switch the host language after the synchronization process for the consistency.
 
-After the editing, we perform the synchronization process by cliking the `Synchronization` button on the inspector window of the localized SFText.
+After the editing, we perform the synchronization process by cliking the `Synchronize` button on the inspector window of the localized SFText.
 
 ![](./Images/LocalizedSFText/AddCoreScope_Sync.gif)
 

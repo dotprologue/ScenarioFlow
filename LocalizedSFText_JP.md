@@ -419,7 +419,7 @@ Localized SFTextを使用した多言語実装の環境を整えるためには�
 >
 > 一貫性を保つため、ホスト言語の切り替えは同期処理の後に行うべきであることに注意してください。
 
-編集を終えたら、localized SFTextのインスペクタウィンドウ上にある`Synchronization`ボタンを押して、同期処理を実行します。
+編集を終えたら、localized SFTextのインスペクタウィンドウ上にある`Synchronize`ボタンを押して、同期処理を実行します。
 
 
 ![](./Images/LocalizedSFText/AddCoreScope_Sync.gif)
