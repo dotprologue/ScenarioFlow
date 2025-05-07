@@ -55,11 +55,7 @@ See [the version history](./VersionHistory.md) for the details of the update. If
 Thank you for having interest in ScenarioFlow!
 
 > [!CAUTION]
-> If you are using macOS, you may encounter a compilation error from `Assets/ScenarioFlow/ScenarioScripts/SFText/Localization/Editor/SFTextFormatter.cs`. The cause of this issue was already identified, and a modified version (ScenarioFlow.1.2.1) is going to be published soon. As a temporal solution, you can fix the error by replacing the existing file (`SFTextFormatter.cs` at the path above) with the modified one you can download via the link below.
-> 
-> [SFTextFormatter.zip](https://github.com/user-attachments/files/20055708/SFTextFormatter.zip)
->
-> You don't have to care about this issue if you are using Windows.
+> ScenarioFlow.1.2.1 has been released to fix a compilation error on macOS.
 
 ### Acknowledgement
 

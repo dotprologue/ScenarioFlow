@@ -1,5 +1,9 @@
 # Version History
 
+## Version 1.2.1
+
++ Resolved a compilation error from `SFTextFormatter.cs` on macOS
+
 ## Version 1.2.0
 
 This update includes new features and changes below:

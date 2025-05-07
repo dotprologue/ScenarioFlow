@@ -55,12 +55,7 @@ ScenarioFlowバージョン1.2.0がリリースされました！[Unityアセッ
 ScenarioFlowにご興味を持っていただき、ありがとうございます！
 
 > [!CAUTION]
-> macOSを使用している場合、コンパイルエラーが`Assets/ScenarioFlow/ScenarioScripts/SFText/Localization/Editor/SFTextFormatter.cs`で発生するかもしれません。この問題の原因は既に特定され、修正版（ScenarioFlow.1.2.1）がすぐにリリースされます。一時的な解決策として、下記のリンクからダウンロードできる修正版で、現存のファイル（SFTextFormatter.cs）を置き換えることでエラーを直すことができます。
->
-> [SFTextFormatter.zip](https://github.com/user-attachments/files/20055708/SFTextFormatter.zip)
->
-> Windowsを使用している場合は、この問題を気にする必要はありません。
-
+> macOSで発生していたコンパイルエラーの修正のため、ScenarioFlow.1.2.1がリリースされています。
 
 ### 謝辞
 
