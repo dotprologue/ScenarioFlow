@@ -54,8 +54,8 @@ ScenarioFlowバージョン1.2.0がリリースされました！[Unityアセッ
 
 ScenarioFlowにご興味を持っていただき、ありがとうございます！
 
-> [!CAUTION]
-> macOSで発生していたコンパイルエラーの修正のため、ScenarioFlow.1.2.1がリリースされています。
+> [!NOTE]
+> ScenarioFlow.1.2.3がバグ修正のためにリリースされました。
 
 ### 謝辞
 

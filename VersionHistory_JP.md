@@ -1,5 +1,13 @@
 # Version History
 
+## Version 1.2.3
+
++ LocalizedSFTextSettingsのバグ修正
+
+## Version 1.2.2
+
++ ScenarioTaskExecutorによって生成された一部のunitaskが終了しない問題を解決
+
 ## Version 1.2.1
 
 + macOSにて、`SFTextFormatter.cs`より発生していたコンパイルエラーの修正

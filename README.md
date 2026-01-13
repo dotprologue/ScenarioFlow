@@ -54,8 +54,8 @@ See [the version history](./VersionHistory.md) for the details of the update. If
 
 Thank you for having interest in ScenarioFlow!
 
-> [!CAUTION]
-> ScenarioFlow.1.2.1 has been released to fix a compilation error on macOS.
+> [!NOTE]
+> ScenarioFlow.1.2.3 has been released for bug fixing.
 
 ### Acknowledgement
 
